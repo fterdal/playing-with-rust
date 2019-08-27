@@ -1,17 +1,22 @@
 use std::io;
+extern crate rand;
+// use rand::Rng;
 
 fn main() {
-    let mut correct_num = 15;
-    let mut guess = String::new();
-    println!("Input your guess:");
-    io::stdin().read_line(&mut guess)
-        .expect("Failed to read line");
-    println!("You guessed {}", guess);
+    // let secret_number = rand::thread_rng().gen_range(1, 101);
+    let secret_number = 50;
+    // let mut guess = String::new();
     loop {
-        println!("{}", correct_num);
-        correct_num -= 1;
-        if correct_num <= 0 {
-            break
+        let mut guess = String::new();
+        println!("Input your guess:");
+        io::stdin().read_line(&mut guess)
+            .expect("Failed to read line");
+        let guess: u32 = guess.trim().to_string().parse().unwrap();
+        println!("You guessed {}", guess);
+        println!("The answer is {}", secret_number);
+        if guess == secret_number {
+            println!("You win!");
+            break;
         }
     }
 }
