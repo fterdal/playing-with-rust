@@ -1,6 +1,10 @@
 fn main() {
-    // println!("Hello, world!");
-    let str1 = String::from("Finn");
-    let str2 = "and Annika";
-    println!("Hello, {} {}", str1, str2);
+    let mut correct_num = 75;
+    loop {
+        println!("{}", correct_num);
+        correct_num -= 1;
+        if correct_num <= 0 {
+            break
+        }
+    }
 }
