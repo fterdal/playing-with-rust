@@ -1,5 +1,5 @@
 fn main() {
-    let mut correct_num = 75;
+    let mut correct_num = 15;
     loop {
         println!("{}", correct_num);
         correct_num -= 1;
