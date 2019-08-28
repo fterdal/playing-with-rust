@@ -1,40 +1,26 @@
-use std::io;
-// use std::cmp::Ordering;
-extern crate rand;
-use rand::Rng;
+// use std::io;
 
 fn main() {
-    let secret_number = rand::thread_rng().gen_range(1, 101);
-    // let secret_number = 50;
-    // let mut guess = String::new();
-    loop {
-        let mut guess = String::new();
-        println!("Input your guess:");
-        io::stdin().read_line(&mut guess).unwrap();
-        let guess: u32 = guess.trim().to_string().parse().unwrap();
-        println!("You guessed {}", guess);
-        println!("The answer is {}", secret_number);
-        println!("{:?}", guess.cmp(&secret_number));
-        // match guess {
-
-        // }
-        if guess == secret_number {
-            println!("You win!");
-            break;
-        }
-    }
+    let duck: Duck = Duck {
+        id: 5,
+        name: "Fred".to_string(),
+        age: 12,
+        // location: { 234.456456, 34.7655 }
+    };
+    println!("Duck: {:?}", duck);
 }
 
-struct Location {
-    lat: f64,
-    long: f64,
-}
+// struct Location {
+//     lat: f64,
+//     long: f64,
+// }
 
+#[derive(Debug)]
 struct Duck {
     id: u32,
     name: String,
     age: u32,
-    location: Location
+    // location: Location
 }
 
 /*
@@ -68,7 +54,3 @@ Duck
 // impl SetDucksAction {
 //     const action_type: String =  "SET_DUCKS";
 // }
-
-fn rust_ducks() -> u32 {
-    5
-}
