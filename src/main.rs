@@ -2,12 +2,34 @@
 
 fn main() {
     let fred_the_duck: Duck = Duck {
-        id: 5,
+        id: 1,
         name: "Fred".to_string(),
         age: 12,
-        location: Location { lat: 234.456456, long: 34.7655 }
+        location: Location {
+            lat: 234.456456,
+            long: 34.765511
+        }
     };
-    println!("Fred the Duck: {:#?}", fred_the_duck);
+    let dorothy_the_duck: Duck = Duck {
+        id: 2,
+        name: "Dorothy".to_string(),
+        age: 8,
+        location: Location {
+            lat: 36.234566,
+            long: 12.765785
+        }
+    };
+    let mut pond: DuckPond = DuckPond { ducks: Vec::new() };
+    pond.ducks.push(fred_the_duck);
+    pond.ducks.push(dorothy_the_duck);
+    println!("Duck Pond: {:#?}", pond);
+    // println!("Fred the Duck: {:#?}", fred_the_duck);
+    // println!("Dorothy the Duck: {:#?}", dorothy_the_duck);
+}
+
+#[derive(Debug)]
+struct DuckPond {
+    ducks: Vec<Duck>
 }
 
 #[derive(Debug)]
@@ -24,34 +46,3 @@ struct Duck {
     location: Location
 }
 
-/*
-RustDucks Store:
-{
-    all_ducks: [Duck]
-    selected_duck: Duck
-}
-
-Duck
-{
-    id: u32,
-    name: String,
-    age: u32,
-    location: {
-        lat: f63,
-        long: f64,
-    }
-}
-*/
-
-// struct SetDucksAction {
-//     all_ducks:
-// }
-
-// enum ActionType {
-//     SetDucksAction,
-//     ClearDucksAction
-// }
-
-// impl SetDucksAction {
-//     const action_type: String =  "SET_DUCKS";
-// }
