@@ -19,12 +19,18 @@ fn main() {
             long: 12.765785
         }
     };
-    let mut pond: DuckPond = DuckPond { ducks: Vec::new() };
-    pond.ducks.push(fred_the_duck);
-    pond.ducks.push(dorothy_the_duck);
-    println!("Duck Pond: {:#?}", pond);
+    // let pond: DuckPond = DuckPond { ducks: Vec::new() };
+    // pond.ducks.push(fred_the_duck);
+    // pond.ducks.push(dorothy_the_duck);
+    // println!("Duck Pond: {:#?}", pond);
+    println!("Duck Pond: {:#?}", get_duck_pond(fred_the_duck));
+    println!("Duck Pond: {:#?}", get_duck_pond(dorothy_the_duck));
     // println!("Fred the Duck: {:#?}", fred_the_duck);
     // println!("Dorothy the Duck: {:#?}", dorothy_the_duck);
+}
+
+fn get_duck_pond(duck: Duck) -> DuckPond {
+    DuckPond { ducks: vec![duck] }
 }
 
 #[derive(Debug)]
@@ -45,4 +51,3 @@ struct Duck {
     age: u32,
     location: Location
 }
-
