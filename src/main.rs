@@ -1,26 +1,27 @@
 // use std::io;
 
 fn main() {
-    let duck: Duck = Duck {
+    let fred_the_duck: Duck = Duck {
         id: 5,
         name: "Fred".to_string(),
         age: 12,
-        // location: { 234.456456, 34.7655 }
+        location: Location { lat: 234.456456, long: 34.7655 }
     };
-    println!("Duck: {:?}", duck);
+    println!("Fred the Duck: {:#?}", fred_the_duck);
 }
 
-// struct Location {
-//     lat: f64,
-//     long: f64,
-// }
+#[derive(Debug)]
+struct Location {
+    lat: f64,
+    long: f64,
+}
 
 #[derive(Debug)]
 struct Duck {
     id: u32,
     name: String,
     age: u32,
-    // location: Location
+    location: Location
 }
 
 /*
