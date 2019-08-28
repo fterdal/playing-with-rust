@@ -1,5 +1,5 @@
 use std::io;
-use std::cmp::Ordering;
+// use std::cmp::Ordering;
 extern crate rand;
 use rand::Rng;
 
@@ -23,4 +23,52 @@ fn main() {
             break;
         }
     }
+}
+
+struct Location {
+    lat: f64,
+    long: f64,
+}
+
+struct Duck {
+    id: u32,
+    name: String,
+    age: u32,
+    location: Location
+}
+
+/*
+RustDucks Store:
+{
+    all_ducks: [Duck]
+    selected_duck: Duck
+}
+
+Duck
+{
+    id: u32,
+    name: String,
+    age: u32,
+    location: {
+        lat: f63,
+        long: f64,
+    }
+}
+*/
+
+// struct SetDucksAction {
+//     all_ducks:
+// }
+
+// enum ActionType {
+//     SetDucksAction,
+//     ClearDucksAction
+// }
+
+// impl SetDucksAction {
+//     const action_type: String =  "SET_DUCKS";
+// }
+
+fn rust_ducks() -> u32 {
+    5
 }
