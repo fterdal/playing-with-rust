@@ -24,19 +24,22 @@ fn main() {
     // pond.ducks.push(dorothy_the_duck);
     // println!("Duck Pond: {:#?}", pond);
     let initial_duck_pond = DuckPond { ducks: Vec::new() };
-    // let after_one = get_new_duck_pond(initial_duck_pond, fred_the_duck);
+    let after_one = get_new_duck_pond(&initial_duck_pond, fred_the_duck);
     // let after_two = get_new_duck_pond(after_one, dorothy_the_duck);
+    println!("Initial Duck Pond: {:#?}", initial_duck_pond);
+    println!("AFter Duck Pond: {:#?}", after_one);
     // println!("Duck Pond: {:#?}", after_two);
     // println!("Duck Pond: {:#?}", get_new_duck_pond(dorothy_the_duck));
     // println!("Fred the Duck: {:#?}", fred_the_duck);
     // println!("Dorothy the Duck: {:#?}", dorothy_the_duck);
 }
 
-// fn get_new_duck_pond(duck_pond: DuckPond, duck: Duck) -> DuckPond {
-//     // let mut new_duck_pond = duck_pond.clone();
-//     // new_duck_pond.push(duck);
-//     // new_duck_pond
-// }
+fn get_new_duck_pond(duck_pond: &DuckPond, duck: Duck) -> DuckPond {
+    let mut new_duck_pond = duck_pond.clone();
+    new_duck_pond.ducks.push(duck);
+    // println!("New Duck Pond: {:#?}", new_duck_pond);
+    new_duck_pond
+}
 
 #[derive(Debug)]
 #[derive(Clone)]
