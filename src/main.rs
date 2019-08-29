@@ -21,8 +21,10 @@ fn main() {
     };
     let initial_duck_pond = DuckPond { ducks: Vec::new() };
     let after_one = get_new_duck_pond(&initial_duck_pond, fred_the_duck);
-    println!("Initial Duck Pond: {:#?}", initial_duck_pond);
-    println!("AFter Duck Pond: {:#?}", after_one);
+    let after_two = get_new_duck_pond(&after_one, dorothy_the_duck);
+    println!("Duck Pond - Initial: {:#?}", initial_duck_pond);
+    println!("Duck Pond - Fred: {:#?}", after_one);
+    println!("Duck Pond - Dorothy: {:#?}", after_two);
 }
 
 fn get_new_duck_pond(duck_pond: &DuckPond, duck: Duck) -> DuckPond {
