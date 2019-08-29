@@ -20,14 +20,14 @@ fn main() {
         }
     };
     let initial_duck_pond = DuckPond { ducks: Vec::new() };
-    let after_one = get_new_duck_pond(&initial_duck_pond, fred_the_duck);
-    let after_two = get_new_duck_pond(&after_one, dorothy_the_duck);
+    let after_one = duck_pond_reducer(&initial_duck_pond, fred_the_duck);
+    let after_two = duck_pond_reducer(&after_one, dorothy_the_duck);
     println!("Duck Pond - Initial: {:#?}", initial_duck_pond);
     println!("Duck Pond - Fred: {:#?}", after_one);
     println!("Duck Pond - Dorothy: {:#?}", after_two);
 }
 
-fn get_new_duck_pond(duck_pond: &DuckPond, duck: Duck) -> DuckPond {
+fn duck_pond_reducer(duck_pond: &DuckPond, duck: Duck) -> DuckPond {
     let mut new_duck_pond = duck_pond.clone();
     new_duck_pond.ducks.push(duck);
     new_duck_pond
