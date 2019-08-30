@@ -1,3 +1,19 @@
+#[derive(Debug)]
+pub struct Store {
+  state: DuckPond,
+}
+impl Store {
+  pub fn new() -> Store {
+    Store { state: DuckPond::new() }
+  }
+  pub fn get_state(&self) -> &DuckPond {
+    &self.state
+  }
+  pub fn dispatch(&mut self, duck: Duck) {
+    self.state.add_duck(duck);
+  }
+}
+
 #[derive(Debug, Clone)]
 pub struct DuckPond {
   pub ducks: Vec<Duck>,
