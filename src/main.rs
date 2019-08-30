@@ -1,5 +1,3 @@
-// use std::io;
-// mod duck_reducer;
 mod duck_reducer;
 use duck_reducer::{Duck, DuckPond};
 

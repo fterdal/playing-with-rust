@@ -4,9 +4,7 @@ pub struct DuckPond {
 }
 impl DuckPond {
   pub fn new() -> DuckPond {
-    DuckPond {
-      ducks: Vec::new()
-    }
+    DuckPond { ducks: Vec::new() }
   }
   pub fn add_duck(&self, duck: Duck) -> DuckPond {
     let mut copy_duck_pond = self.clone();
@@ -22,10 +20,7 @@ pub struct Location {
 }
 impl Location {
   pub fn new(lat: f64, long: f64) -> Location {
-    Location {
-      lat,
-      long
-    }
+    Location { lat, long }
   }
 }
 
