@@ -10,6 +10,10 @@ impl Counter {
     pub fn increment(&mut self) {
         self.count += 1;
     }
+
+    pub fn create_get_count_fn(&self) -> impl Fn() -> u32 + '_ {
+        move || self.count
+    }
 }
 
 fn main() {
@@ -17,4 +21,6 @@ fn main() {
     println!("Counter: {}", counter1.get_count());
     counter1.increment();
     println!("Counter: {}", counter1.get_count());
+    let new_get_count = counter1.create_get_count_fn();
+    println!("Counter: {}", new_get_count());
 }
