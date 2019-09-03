@@ -14,6 +14,7 @@ fn main() {
 
 
     // After dispatching Dorothy, the store still seems empty. Why is this?
+    // ANSWER: Because add_duck returns a new DuckPond, duh!!!
     let mut store = Store::new();
     // println!("{:#?}", store);
     // store.get_state();

@@ -10,7 +10,10 @@ impl Store {
     &self.state
   }
   pub fn dispatch(&mut self, duck: Duck) {
+    println!("Hello duck: {:#?}", duck);
     self.state.add_duck(duck);
+    println!("Hello self: {:#?}", self);
+    println!("Hello get state: {:#?}", self.get_state());
   }
 }
 
